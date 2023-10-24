@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 15:33:49 by umeneses          #+#    #+#             */
-/*   Updated: 2023/10/24 15:35:56 by umeneses         ###   ########.fr       */
+/*   Created: 2023/10/24 11:03:14 by umeneses          #+#    #+#             */
+/*   Updated: 2023/10/24 14:17:48 by umeneses         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include <stdio.h>
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-int	ft_printf(const char *format, ...)
-{
-	int	fd;
+# include <stdarg.h>
+# include "./libft/libft.h"
 
-	fd = 1;
-	if (ft_strlen(format) == 1)
-	{
-		ft_putchar_fd(*format, fd);
-	}
-	return (0);
-}
-
+#endif
