@@ -6,7 +6,7 @@
 /*   By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 16:44:27 by umeneses          #+#    #+#             */
-/*   Updated: 2023/10/20 18:31:09 by umeneses         ###   ########.fr       */
+/*   Updated: 2023/10/24 13:34:06 by umeneses         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,11 @@
 double	avarage(int count, ...)
 {
 	va_list	ap;
-	int j;
-	double sum;
+	int		j;
+	double	sum;
 
 	sum = 0;
 	j = 0;
-
 	va_start (ap, count);
 	while (j < count)
 	{
@@ -32,7 +31,7 @@ double	avarage(int count, ...)
 	return (sum / count);
 }
 
-int main(int argc, const char **argv)
+int	main(int argc, const char **argv)
 {
 	int	index;
 
@@ -44,5 +43,5 @@ int main(int argc, const char **argv)
 		index++;
 	}
 		printf("\navarage = %f\n", avarage((argc - 1), argv[index]));
-	return(0);
+	return (0);
 }
