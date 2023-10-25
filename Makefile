@@ -6,7 +6,7 @@
 #    By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/24 10:50:49 by umeneses          #+#    #+#              #
-#    Updated: 2023/10/24 15:54:58 by umeneses         ###   ########.fr        #
+#    Updated: 2023/10/25 14:37:55 by umeneses         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,12 +24,7 @@ AR				= ar -rcs
 
 RM				= rm -f
 
-#CC				= cc
-
 CFLAGS			= -Wall -Wextra -Werror
-
-NORME			= norminette -R CheckForbiddenSourceHeader
-# remove this line before sending
 
 LIBFT_DIR		= ./libft/
 
