@@ -6,12 +6,11 @@
 /*   By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 15:33:49 by umeneses          #+#    #+#             */
-/*   Updated: 2023/10/24 15:35:56 by umeneses         ###   ########.fr       */
+/*   Updated: 2023/10/25 14:41:42 by umeneses         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 int	ft_printf(const char *format, ...)
 {
