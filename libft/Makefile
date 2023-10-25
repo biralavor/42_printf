@@ -6,7 +6,7 @@
 #    By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/26 20:31:36 by umeneses          #+#    #+#              #
-#    Updated: 2023/09/11 15:08:24 by umeneses         ###   ########.fr        #
+#    Updated: 2023/10/25 13:52:24 by umeneses         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,13 @@ NAME 				= libft.a
 
 AUTHOR				= umeneses
 
-SRC_FTS				= ft_atoi.c		\
+SRC_FTS				= ft_putchar_fd.c	\
+					ft_putstr_fd.c	\
+					ft_putendl_fd.c	\
+					ft_putnbr_fd.c	\
+					ft_strlen.c		\
+
+#SRC_FTS				= ft_atoi.c		\
 					ft_bzero.c		\
 					ft_calloc.c		\
 					ft_isalnum.c	\
@@ -49,7 +55,7 @@ SRC_FTS				= ft_atoi.c		\
 					ft_split.c		\
 					ft_strtrim.c
 
-BONUS_FTS			= ft_lstadd_front_bonus.c	\
+#BONUS_FTS			= ft_lstadd_front_bonus.c	\
 					ft_lstadd_back_bonus.c		\
 					ft_lstclear_bonus.c			\
 					ft_lstdelone_bonus.c		\
@@ -75,7 +81,7 @@ CFLAGS 				= -Wall -Wextra -Werror
 
 all:				$(NAME)
 
-$(NAME):			$(OBJS)
+$(NAME):			$(OBJS) #$(BONUS_OBJS)
 
 %.o: %.c
 					$(CC) -c $(CFLAGS) $< -o $@
