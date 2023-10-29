@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+         #
+#    By: bira <bira@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/24 10:50:49 by umeneses          #+#    #+#              #
-#    Updated: 2023/10/25 14:37:55 by umeneses         ###   ########.fr        #
+#    Updated: 2023/10/26 16:29:54 by bira             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,11 +30,11 @@ LIBFT_DIR		= ./libft/
 
 all:			libft_lib $(NAME)
 
-$(NAME):		$(OBJS)
+$(NAME):		$(OBJS) | libft_lib
+				cp $(LIBFT_DIR)libft.a $(NAME)
 
 libft_lib:
-				$(MAKE) -C $(LIBFT_DIR)
-				cp $(LIBFT_DIR)libft.a $(NAME)
+				@make -C $(LIBFT_DIR)
 
 %.o:			%.c
 				$(CC) -c $(CFLAGS) $< -o $@

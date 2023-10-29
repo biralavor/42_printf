@@ -3,24 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bira <bira@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 15:33:49 by umeneses          #+#    #+#             */
-/*   Updated: 2023/10/25 14:41:42 by umeneses         ###   ########.fr       */
+/*   Updated: 2023/10/26 17:40:05 by bira             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
 int	ft_printf(const char *format, ...)
 {
-	int	fd;
+	va_list	ptr;
+	int		c;
+	int		i;
 
-	fd = 1;
-	if (ft_strlen(format) == 1)
+	va_start(ptr, format);
+	i = va_arg(ptr, int);
+	c = va_arg(ptr, int);
+	// if (*format == %)
+	// {	
+	// }
+	// fd = 1;
+	// ft_putchar_fd(c, fd);
+	// va_end(ptr);
+	int index;
+
+	index = 3;
+	while (index--)
 	{
-		ft_putchar_fd(*format, fd);
+		printf("%c char\n", *format++);
 	}
+	printf("\n%i int\n", i);
+	printf("\n%c char\n", c);
+	va_end(ptr);
 	return (0);
 }
-

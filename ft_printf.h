@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bira <bira@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 11:03:14 by umeneses          #+#    #+#             */
-/*   Updated: 2023/10/24 14:17:48 by umeneses         ###   ########.fr       */
+/*   Updated: 2023/10/26 16:17:31 by bira             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,7 @@
 
 # include <stdarg.h>
 # include "./libft/libft.h"
+
+int	ft_printf(const char *format, ...);
 
 #endif
