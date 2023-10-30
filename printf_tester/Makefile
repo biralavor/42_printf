@@ -6,7 +6,7 @@
 #    By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/25 13:53:34 by umeneses          #+#    #+#              #
-#    Updated: 2023/10/25 15:10:26 by umeneses         ###   ########.fr        #
+#    Updated: 2023/10/30 17:05:46 by umeneses         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,11 +20,15 @@ WARNING				= \033[0;33m
 COLOR_OFF			= \033[0m
 DONE				= @echo "\n$(SUCCESS)Done!\n $(COLOR_OFF)"
 
-SOURCES				= printf_char.c
+VALGRIND			= valgrind --leak-check=yes ./a.out
+
+SCR_TESTERS			= printf_char.c
+
+SCR_FTS				= ../ft_printf.c
 
 #INCLUDES
 
-OBJS				= $(SOURCES:.c=.o)
+OBJS				= $(SCR_TESTERS:.c=.o)
 
 AR					= ar -rcs
 
@@ -51,6 +55,11 @@ printf_lib:
 					$(CC) -c $(CFLAGS) $< -o $@
 					$(AR) $(NAME) $@
 					$(NORM)
+					$(DONE)
+
+tester:				all printf_lib
+					@echo "\n$(SUCCESS)Starting printf_tester...\n $(COLOR_OFF)"
+					$(CC) $(SCR_FTS) $(SCR_TESTERS) $(NAME) && $(VALGRIND)
 					$(DONE)
 
 clean:
