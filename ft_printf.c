@@ -3,40 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bira <bira@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 15:33:49 by umeneses          #+#    #+#             */
-/*   Updated: 2023/10/26 17:40:05 by bira             ###   ########.fr       */
+/*   Updated: 2023/10/30 17:10:18 by umeneses         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 int	ft_printf(const char *format, ...)
 {
 	va_list	ptr;
-	int		c;
-	int		i;
 
 	va_start(ptr, format);
-	i = va_arg(ptr, int);
-	c = va_arg(ptr, int);
-	// if (*format == %)
-	// {	
-	// }
-	// fd = 1;
-	// ft_putchar_fd(c, fd);
-	// va_end(ptr);
-	int index;
-
-	index = 3;
-	while (index--)
+	while (*format != '\0')
 	{
-		printf("%c char\n", *format++);
+		if('%' == *format)
+		{
+			format++;
+			if('c' == *format)
+				ft_putchar_fd(va_arg(ptr, int), 1);
+			else if('s' == *format)
+				ft_putstr_fd(va_arg(ptr, char *), 1);
+			else if(ft_isdigit(*format))
+				ft_putnbr_fd(va_arg(ptr, int), 1);
+			format++;
+		}
+		else
+		{	
+			ft_putchar_fd(*format, 1);
+			format++;
+		}
 	}
-	printf("\n%i int\n", i);
-	printf("\n%c char\n", c);
 	va_end(ptr);
 	return (0);
 }
