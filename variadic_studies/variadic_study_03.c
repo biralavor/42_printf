@@ -6,7 +6,7 @@
 /*   By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 19:10:43 by umeneses          #+#    #+#             */
-/*   Updated: 2023/10/24 13:32:44 by umeneses         ###   ########.fr       */
+/*   Updated: 2023/10/31 13:22:34 by umeneses         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,12 @@
 
 int	variadic_add(int count, ...)
 {
-	va_list args;
-	int i;
-	int sum;
+	va_list	args;
+	int		i;
+	int		sum;
 
 	/* save arguments in list */
 	va_start(args, count);
-
 	sum = 0;
 	i = 0;
 	while (i < count)
@@ -29,7 +28,7 @@ int	variadic_add(int count, ...)
 		sum = sum + va_arg(args, int);
 		i++;
 	}
-	va_end (args);
+	va_end(args);
 	return (sum);
 }
 

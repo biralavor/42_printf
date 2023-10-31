@@ -6,7 +6,7 @@
 /*   By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 16:44:27 by umeneses          #+#    #+#             */
-/*   Updated: 2023/10/24 13:34:06 by umeneses         ###   ########.fr       */
+/*   Updated: 2023/10/31 13:22:03 by umeneses         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,6 @@ int	main(int argc, const char **argv)
 		printf("%s\n", argv[index]);
 		index++;
 	}
-		printf("\navarage = %f\n", avarage((argc - 1), argv[index]));
+	printf("\navarage = %f\n", avarage((argc - 1), argv[index]));
 	return (0);
 }

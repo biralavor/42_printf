@@ -6,7 +6,7 @@
 /*   By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 17:43:15 by umeneses          #+#    #+#             */
-/*   Updated: 2023/10/24 13:32:21 by umeneses         ###   ########.fr       */
+/*   Updated: 2023/10/31 13:24:16 by umeneses         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,18 @@ int	largest_nbr(int n, ...)
 	/* declaring pointer to the argument list */
 	va_list	ptr;
 	/* initializing argument to the list pointer */
-	va_start(ptr, n);
+	int		i;
+	int		max;
+	int		temp;
 
-	int	max = va_arg(ptr, int);
-	int	i = 0;
+	va_start(ptr, n);
+	max = va_arg(ptr, int);
+	i = 0;
 	while (i < n - 1)
 	{
 		/* accessing current vaiable */
 		/* and pointing to the next */
-		int temp = va_arg(ptr, int);
+		temp = va_arg(ptr, int);
 		/* max = temp > max ? temp : max; */
 		if (temp > max)
 			max = temp;

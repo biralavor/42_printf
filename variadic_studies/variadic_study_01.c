@@ -6,7 +6,7 @@
 /*   By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:33:39 by umeneses          #+#    #+#             */
-/*   Updated: 2023/10/24 13:33:41 by umeneses         ###   ########.fr       */
+/*   Updated: 2023/10/31 13:22:20 by umeneses         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@
 /* variadic function to add numbers */
 int	ft_add_numbers(int n, ...)
 {
-	int	sum = 0;
+	int		sum;
+	int		i;
 	/* Declaring pointer to the argument list */
-	va_list ptr;
+	va_list	ptr;
 	/* initializing argument to the list pointer */
 	va_start(ptr, n);
-	int i = 0;
+	sum = 0;
+	i = 0;
 	while (i < n)
 	{
 		/* accessing current variable and pointing */
