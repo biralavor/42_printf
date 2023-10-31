@@ -6,7 +6,7 @@
 /*   By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 15:36:01 by umeneses          #+#    #+#             */
-/*   Updated: 2023/10/30 17:14:47 by umeneses         ###   ########.fr       */
+/*   Updated: 2023/10/31 15:04:19 by umeneses         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,17 @@ int	main(void)
 	printf("original printf checker:\n \
 			char = %c\n \
 			str  = %s\n \
-			integ= %i\n", 'd', "hello", 9);
+			integ= %li\n \
+			decim= %d\n \
+			unsig= %u\n", \
+			'd', "string", -2147483648, __INT_MAX__, 65534);
 	printf("\033[0;33m");
-	printf("\n");
 	ft_printf("my printf :)\n \
-				char = %c\n \
-				str  = %s\n \
-				integ= %i\n", 'd', "hello", 9);
+			char = %c\n \
+			str  = %s\n \
+			integ= %i\n \
+			decim= %d\n \
+			unsig= %u\n", \
+			'd', "string", -2147483648, __INT_MAX__, 65534);
 	return (0);
 }
