@@ -6,47 +6,45 @@
 /*   By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:33:39 by umeneses          #+#    #+#             */
-/*   Updated: 2023/10/31 13:22:20 by umeneses         ###   ########.fr       */
+/*   Updated: 2023/11/03 14:18:49 by umeneses         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
 #include <stdio.h>
 
-/* variadic function to add numbers */
 int	ft_add_numbers(int n, ...)
 {
 	int		sum;
 	int		i;
-	/* Declaring pointer to the argument list */
 	va_list	ptr;
-	/* initializing argument to the list pointer */
+
 	va_start(ptr, n);
 	sum = 0;
 	i = 0;
 	while (i < n)
 	{
-		/* accessing current variable and pointing */
-		/* to the next one */
 		sum += va_arg(ptr, int);
 		i++;
 	}
 	va_end(ptr);
 	return (sum);
 }
+/* 21 - Declaring pointer to the argument list */
+/* 22 - initializing argument to the list pointer */
+/* 27 - accessing current variable and pointing to the next one */
 
 int	main(void)
 {
 	printf("\033[0;34m");
 	printf("\nVariadic functions:\n");
 	printf("\033[0;37m");
-	/* variable numbers of arguments */
 	printf("1 + 2 = %d \n", ft_add_numbers(2, 1, 2));
 	printf("3 + 4 + 5 = %d \n", ft_add_numbers(3, 3, 4, 5));
 	printf("6 + 7 + 8 + 9 = %d \n", ft_add_numbers(4, 6, 7, 8, 9));
 	return (0);
 }
-
+/* variable numbers of arguments */
 /*
 The type va_list shall be defined for variables used
 to traverse the list.
