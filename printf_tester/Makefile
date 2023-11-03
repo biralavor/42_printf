@@ -6,7 +6,7 @@
 #    By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/25 13:53:34 by umeneses          #+#    #+#              #
-#    Updated: 2023/10/30 17:05:46 by umeneses         ###   ########.fr        #
+#    Updated: 2023/11/03 13:11:56 by umeneses         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ DONE				= @echo "\n$(SUCCESS)Done!\n $(COLOR_OFF)"
 
 VALGRIND			= valgrind --leak-check=yes ./a.out
 
-SCR_TESTERS			= printf_char.c
+SCR_TESTERS			= printf_tester.c
 
 SCR_FTS				= ../ft_printf.c
 
