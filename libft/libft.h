@@ -6,7 +6,7 @@
 /*   By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 20:30:01 by umeneses          #+#    #+#             */
-/*   Updated: 2023/10/31 13:00:25 by umeneses         ###   ########.fr       */
+/*   Updated: 2023/11/03 13:39:19 by umeneses         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,10 @@ int		ft_toupper(int c);
 
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_itoa(int n);
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
+int		ft_putchar_fd(int c, int fd);
+int		ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
-void	ft_putnbr_fd(long int n, int fd);
+void	ft_putnbr_fd(long long int n, int fd);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_strjoin(char const *s1, char const *s2);
