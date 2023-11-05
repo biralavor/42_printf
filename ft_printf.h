@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bira <bira@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 11:03:14 by umeneses          #+#    #+#             */
-/*   Updated: 2023/10/31 13:11:27 by umeneses         ###   ########.fr       */
+/*   Updated: 2023/11/05 20:17:27 by bira             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,7 @@
 # include <stdarg.h>
 # include "./libft/libft.h"
 
-typedef struct s_lst_1
-{
-	int					i;
-	int					c;
-	char				*s;
-	int					d;
-	unsigned int		u;
-	struct s_lst_1		*next;
-}						t_lst_1;
-
-typedef struct s_lst_2
-{
-	void				*p;
-	char				*s;
-	int					hex_low;
-	int					hex_upp;
-	struct s_lst_2		*next;
-}						t_lst_2;
-
 int	ft_printf(const char *format, ...);
+int	ft_placeholder(char format, va_list ptr);
 
 #endif
