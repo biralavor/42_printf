@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   printf_tester.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bira <bira@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 15:36:01 by umeneses          #+#    #+#             */
-/*   Updated: 2023/11/03 14:12:27 by umeneses         ###   ########.fr       */
+/*   Updated: 2023/11/05 20:28:29 by bira             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ int	main(void)
 	int	my_l;
 
 	printf("\033[0;34m");
-	len = printf(" %s\n", " NULL ");
+	len = printf(" %x ", 10);
 	printf("len = %i\n", len);
-	printf("\033[0;33m");
-	my_l = ft_printf(" %s\n", '0' + 256);
+	printf("\033[0;33m\n");
+	my_l = ft_printf(" %x ", 10);
 	printf("my_l = %i\n", my_l);
 	return (0);
 }
