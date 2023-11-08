@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bira <bira@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 15:33:49 by umeneses          #+#    #+#             */
-/*   Updated: 2023/11/05 20:23:42 by bira             ###   ########.fr       */
+/*   Updated: 2023/11/08 17:48:11 by umeneses         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,17 +53,51 @@ int	ft_placeholder(char format, va_list ptr)
 		len += ft_putnbr_fd(va_arg(ptr, long long int), 1);
 	}
 	else if (('i' == format) || ('d' == format))
-		len += ft_putnbr_fd(va_arg(ptr, int), 1);
+		len += ft_putnbrbase(va_arg(ptr, int), DECIMAL);
 	else if ('u' == format)
 		len += ft_putnbr_fd(va_arg(ptr, unsigned int), 1);
 	else if ('%' == format)
 		len += ft_putchar_fd(37, 1);
 	else if ('x' == format)
+		len += ft_putnbrbase((long long)va_arg(ptr, unsigned int), HEXALOWER);
+	else if ('X' == format)
+		len += ft_putnbrbase((long long)va_arg(ptr, unsigned int), HEXAUPPER);
+	else if ('p' == format)
+		len += ft_putptr((long long)va_arg(ptr, unsigned int), HEXALOWER);
+	return (len);
+}
+
+int	ft_putnbrbase(long long n, char *base)
+{
+	int	len;
+	int	base_len;
+
+	len = 0;
+	base_len = ft_strlen(base);
+	if (n < 0)
 	{
-		if (9 <= format)
-			len += ft_putnbr_fd(va_arg(ptr, unsigned int), 1);
-		else
-			len += ft_putchar_fd((va_arg((ptr), int) % 10) + 'a', 1);
+		len += ft_putchar_fd('-', 1);
+		n = -n;
+	}
+	if (n >= base_len)
+		len += ft_putnbrbase((n / base_len), base);
+	len += ft_putchar_fd(base[n % base_len], 1);
+	return (len);
+}
+
+int	ft_putptr(long long n, char *base)
+{
+	int	len;
+	int	base_len;
+
+	len = 0;
+	base_len = ft_strlen(base);
+	if (n == 0)
+		len += ft_putstr_fd("(nil)", 1);
+	else
+	{
+		len += ft_putstr_fd("0x", 1);
+		len += ft_putnbrbase(n, base);
 	}
 	return (len);
 }
