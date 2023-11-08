@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bira <bira@student.42.fr>                  +#+  +:+       +#+         #
+#    By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/25 13:53:34 by umeneses          #+#    #+#              #
-#    Updated: 2023/11/05 19:52:23 by bira             ###   ########.fr        #
+#    Updated: 2023/11/08 17:33:48 by umeneses         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ AR					= ar -rcs
 
 RM					= rm -f
 
-CFLAGS				= -Wall -Wextra -Werror
+CFLAGS				?= -Wall -Wextra -Werror
 
 NORM				= norminette -R CheckForbiddenSourcHeader
 
@@ -57,7 +57,7 @@ printf_lib:
 					$(NORM)
 					$(DONE)
 
-tester:				all printf_lib
+tester:				re printf_lib
 					@echo "\n$(SUCCESS)Starting printf_tester...\n $(COLOR_OFF)"
 					$(CC) $(SCR_FTS) $(SCR_TESTERS) $(NAME) && $(VALGRIND)
 					$(DONE)
