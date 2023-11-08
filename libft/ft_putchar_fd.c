@@ -6,7 +6,7 @@
 /*   By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 19:11:00 by umeneses          #+#    #+#             */
-/*   Updated: 2023/11/03 13:35:21 by umeneses         ###   ########.fr       */
+/*   Updated: 2023/11/08 17:23:18 by umeneses         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int	ft_putchar_fd(int c, int fd)
 {
-	write(fd, &c, 1);
-	return (1);
+	int	len;
+
+	len = write(fd, &c, 1);
+	return (len);
 }
