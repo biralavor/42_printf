@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bira <bira@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 20:30:01 by umeneses          #+#    #+#             */
-/*   Updated: 2023/11/05 20:30:29 by bira             ###   ########.fr       */
+/*   Updated: 2023/11/09 11:47:46 by umeneses         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ size_t			ft_strlcat(char *dest, const char *src, size_t catsize);
 size_t			ft_strlcpy(char *dest, const char *src, size_t dest_size);
 size_t			ft_strlen(const char *content);
 int				ft_strncmp(const char *str1, const char *str2, size_t num);
-char			*ft_strnstr(const char *haystack, const char *tofind, size_t len);
+char			*ft_strnstr(const char *haystack, const char *tofind, \
+							size_t len);
 char			*ft_strrchr(const char *str, int c);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
@@ -69,7 +70,8 @@ void			ft_lstadd_back(t_list **lst, t_list *new);
 void			ft_lstdelone(t_list *lst, void (*del)(void*));
 void			ft_lstclear(t_list **lst, void (*del)(void *));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
-t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), \
+							void (*del)(void *));
 /* Bonus Functions */
 
 #endif
