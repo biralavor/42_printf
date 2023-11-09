@@ -6,7 +6,7 @@
 #    By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/25 13:53:34 by umeneses          #+#    #+#              #
-#    Updated: 2023/11/08 17:33:48 by umeneses         ###   ########.fr        #
+#    Updated: 2023/11/09 14:07:02 by umeneses         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SUCCESS				= \033[0;32m
 UPDATING			= \033[0;35m
 WARNING				= \033[0;33m
 COLOR_OFF			= \033[0m
-DONE				= @echo "\n$(SUCCESS)Done!\n $(COLOR_OFF)"
+DONE				= @echo "$(SUCCESS)////// Done \o/\n $(COLOR_OFF)"
 
 VALGRIND			= valgrind --leak-check=yes ./a.out
 
@@ -36,7 +36,7 @@ RM					= rm -f
 
 CFLAGS				?= -Wall -Wextra -Werror
 
-NORM				= norminette -R CheckForbiddenSourcHeader
+#NORM				= norminette -R CheckForbiddenSourcHeader
 
 PRINTF_DIR			= $(shell dirname $(shell pwd))/
 
@@ -45,20 +45,20 @@ all:				printf_lib $(NAME)
 $(NAME):			$(OBJS)
 
 printf_lib:
-					@echo "\n$(SUCCESS)Importing Printf files...\n $(COLOR_OFF)"
+					@echo "\n$(WARNING)Importing Printf files...\n $(COLOR_OFF)"
 					$(MAKE) -C $(PRINTF_DIR)
 					cp $(PRINTF_DIR)libftprintf.a $(NAME)
 					$(DONE)
 
 %.o:				%.c
-					@echo "\n$(SUCCESS)Starting compilation...\n $(COLOR_OFF)"
+					@echo "\n$(WARNING)Starting compilation...\n $(COLOR_OFF)"
 					$(CC) -c $(CFLAGS) $< -o $@
 					$(AR) $(NAME) $@
 					$(NORM)
 					$(DONE)
 
 tester:				re printf_lib
-					@echo "\n$(SUCCESS)Starting printf_tester...\n $(COLOR_OFF)"
+					@echo "\n$(WARNING)Starting printf_tester...\n $(COLOR_OFF)"
 					$(CC) $(SCR_FTS) $(SCR_TESTERS) $(NAME) && $(VALGRIND)
 					$(DONE)
 

@@ -6,7 +6,7 @@
 /*   By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 15:36:01 by umeneses          #+#    #+#             */
-/*   Updated: 2023/11/08 17:33:12 by umeneses         ###   ########.fr       */
+/*   Updated: 2023/11/09 14:23:50 by umeneses         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,31 +15,82 @@
 
 int	main(void)
 {
-	int	len;
-	int	my_l;
+	int	lenght;
+	int	my_len;
 
 	printf("\033[0;34m");
-	len = printf(" %p %p ", 0, 0);
-	printf("len = %i\n", len);
+	ft_printf("\n________________");
+	ft_printf("\n|| CHAR ||\n");
+	lenght = printf("c= %c %c %c %c ", '0', '0' - 256, 0, ' ');
+	printf("lenght = %i\n", lenght);
 	printf("\033[0;33m\n");
-	my_l = ft_printf(" %p %p ", 0, 0);
-	printf("my_l = %i\n", my_l);
-	return (0);
-}
-/*
-{
+	my_len = ft_printf("c= %c %c %c %c ", '0', '0' - 256, 0, ' ');
+	printf("my_len = %i\n", my_len);
 	printf("\033[0;34m");
-	printf("original printf checker:\n \
-		char = |%c|	str  = %s	intdec= %i\n \
-		unsig= %u	perc = %%\n \
-		hexal= %x	HEXAU = %X\n",
-		'0', "string", -32767, 65535, 55555, 44444);
-	printf("\033[0;33m");
-	ft_printf("my printf :)\n \
-		char = |%c|	str  = %s	intdec= %i\n \
-		unsig= %u	perc = %%\n \
-		hexal=		HEXAU=	\n", \
-		'0', "string", -32767, 65535);
+	ft_printf("\n________________");
+	ft_printf("\n|| STRING ||\n");
+	lenght = printf("s= %s %s %s %s ", "", "string", "-", "4");
+	printf("lenght = %i\n", lenght);
+	printf("\033[0;33m\n");
+	my_len = ft_printf("s= %s %s %s %s ", "", "string", "-", "4");
+	printf("my_len = %i\n", my_len);
+	printf("\033[0;34m");
+	ft_printf("\n________________");
+	ft_printf("\n|| INTERGER ||\n");
+	lenght = printf("i= %i %i %i ", 0, 101, -15);
+	printf("lenght = %i\n", lenght);
+	printf("\033[0;33m\n");
+	my_len = ft_printf("i= %i %i %i ", 0, 101, -15);
+	printf("my_len = %i\n", my_len);
+	printf("\033[0;34m");
+	ft_printf("\n________________");
+	ft_printf("\n|| DECIMAL ||\n");
+	lenght = printf("d= %d %d %d ", 0, -1, 100);
+	printf("lenght = %i\n", lenght);
+	printf("\033[0;33m\n");
+	my_len = ft_printf("d= %d %d %d ", 0, -1, 100);
+	printf("my_len = %i\n", my_len);
+	printf("\033[0;34m");
+	ft_printf("\n________________");
+	ft_printf("\n|| UNSIGNED ||\n");
+	lenght = printf("u= %u %u %u ", 0, -1, 100);
+	printf("lenght = %i\n", lenght);
+	printf("\033[0;33m\n");
+	my_len = ft_printf("u= %u %u %u ", 0, -1, 100);
+	printf("my_len = %i\n", my_len);
+	printf("\033[0;34m");
+	ft_printf("\n________________");
+	ft_printf("\n|| PERCENTUAL ||\n");
+	lenght = printf("%%= %% %%%%    %% ");
+	printf("lenght = %i\n", lenght);
+	printf("\033[0;33m\n");
+	my_len = ft_printf("%%= %% %%%%    %% ");
+	printf("my_len = %i\n", my_len);
+	printf("\033[0;34m");
+	ft_printf("\n________________");
+	ft_printf("\n|| HEXADECIMAL LOWER ||\n");
+	lenght = printf("x= %x %x ", -9, 100);
+	printf("lenght = %i\n", lenght);
+	printf("\033[0;33m\n");
+	my_len = ft_printf("x= %x %x ", -9, 100);
+	printf("my_len = %i\n", my_len);
+	printf("\033[0;34m");
+	ft_printf("\n________________");
+	ft_printf("\n|| HEXADECIMAL UPPER ||\n");
+	lenght = printf("X= %X %X ", -1, 100);
+	printf("lenght = %i\n", lenght);
+	printf("\033[0;33m\n");
+	my_len = ft_printf("X= %X %X ", -1, 100);
+	printf("my_len = %i\n", my_len);
+	printf("\033[0;34m");
+	ft_printf("\n________________");
+	ft_printf("\n|| POINTER ||\n");
+	lenght = printf("p= %p %p %p ", (void *)-1, (void *)15, (void *)16);
+	printf("lenght = %i\n", lenght);
+	printf("\033[0;33m\n");
+	my_len = ft_printf("p= %p %p %p ", (void *)-1, (void *)15, (void *)16);
+	printf("my_len = %i\n", my_len);
+	printf("\033[0;34m");
+	ft_printf("________________\n");
 	return (0);
 }
-*/
