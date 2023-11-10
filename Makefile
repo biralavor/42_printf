@@ -6,7 +6,7 @@
 #    By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/24 10:50:49 by umeneses          #+#    #+#              #
-#    Updated: 2023/11/03 10:47:12 by umeneses         ###   ########.fr        #
+#    Updated: 2023/11/10 15:08:00 by umeneses         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ NAME			= libftprintf.a
 
 AUTHOR			= umeneses
 
-SOURCES 		= ft_printf.c
+SOURCES 		= ft_printf.c \
+					ft_printf_utils.c
 
 INCLUDE			= ft_printf.h
 
