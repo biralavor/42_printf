@@ -6,11 +6,11 @@
 /*   By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 15:36:01 by umeneses          #+#    #+#             */
-/*   Updated: 2023/11/10 15:09:01 by umeneses         ###   ########.fr       */
+/*   Updated: 2023/11/10 14:46:00 by umeneses         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./ft_printf.h"
+#include "../bonus/ft_printf_bonus.h"
 #include <stdio.h>
 
 int	main(void)
@@ -89,6 +89,17 @@ int	main(void)
 	printf("lenght = %i\n", lenght);
 	printf("\033[0;33m\n");
 	my_len = ft_printf("p= %p %p %p ", (void *)-1, (void *)15, (void *)16);
+	printf("my_len = %i\n", my_len);
+	printf("\033[0;34m");
+	ft_printf("________________\n");
+	ft_printf("\n|| ---BONUS---BONUS---BONUS--- ||\n");
+	ft_printf("|| ---BONUS---BONUS---BONUS--- ||\n");
+	ft_printf("|| ---BONUS---BONUS---BONUS--- ||\n");
+	ft_printf("\n|| SHARP ||\n");
+	lenght = printf("#= %#x %#x %#x %#x ", 0, -1, 9, 100);
+	printf("lenght = %i\n", lenght);
+	printf("\033[0;33m\n");
+	my_len = ft_printf("#= %#x %#x %#x %#x ", 0, -1, 9, 100);
 	printf("my_len = %i\n", my_len);
 	printf("\033[0;34m");
 	ft_printf("________________\n");
